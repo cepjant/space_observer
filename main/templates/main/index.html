@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %} Index {% endblock %}
+
+{% block content %}
+
+{{ ISS_message }} <br/>
+Текущее UTC время: {{ time }}, {{ date }} <br/>
+Координаты МКС: <br/>
+Широта: {{ position.latitude }} <br/>
+Долгота: {{ position.longitude }} <br/>
+<iframe src="{% url 'map' %}" width="800" height="340"></iframe> <!-- подгружаем map.html из 'templates' проекта -->
+<br/>
+{{ crew_message }} <br/>
+Всего людей в космосе: {{ people_count }}: <br/>
+{% for key, value in names_crafts.items %} <!-- достает ключ (имя) и значение (корабль) из словаря с людьми в космосе -->
+{{ key }} ({{ value }}) <br/>
+{% endfor %}
+
+{% endblock %}
+
+{% block script %}
+
+{% endblock %}
