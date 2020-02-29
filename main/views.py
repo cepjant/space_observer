@@ -68,6 +68,6 @@ class Map:
         main_map = folium.Map(location=[37.143977, -121.963908], zoom_start=1,
                          tiles='CartoDB dark_matter')  # установка карты
         folium.CircleMarker(location=(lat, long), radius=9, popup='ISS',
-                            fill_color='white', color="gray", fill_opacity=0.9).add_to(map)  # установка маркера МКС
+                            fill_color='white', color="gray", fill_opacity=0.9).add_to(main_map)  # установка маркера МКС
 
         main_map.save('templates/map.html')  # сохранение карты в 'templates' проекта
