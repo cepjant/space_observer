@@ -6,7 +6,7 @@ from django.shortcuts import render
 from django.views.generic import View
 from datetime import datetime
 
-#
+
 class Main(View):
     def get(self, request):
         Map.create_map()
